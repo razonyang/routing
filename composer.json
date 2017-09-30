@@ -1,0 +1,32 @@
+{
+    "name": "devlibs/routing",
+    "type": "library",
+    "description": "a fast and flexible HTTP Router",
+    "keywords": [
+        "http",
+        "router",
+        "RESTful API"
+    ],
+    "homepage": "https://github.com/devlibs/routing",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/devlibs/routing/issues"
+    },
+    "authors": [
+        {
+            "name": "Razon Yang",
+            "email": "razonyang@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DevLibs\\Routing\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3"
+    }
+}
