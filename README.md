@@ -45,7 +45,7 @@ $router = new Router($settings);
 Router::handle($method, $path, $handler, $settings = null);
 ```
 
-- `method` - `string` or `array`, **case-sensitive**, such as `GET`, `GET|POST`, `['GET', 'POST']`, but `GET, POST` and `GET| POST` are invalid.
+- `method` - `string` or `array`, **case-sensitive**, such as `GET`, `GET|POST`, `['GET', 'POST']`, but "GET, POST" and "GET| POST" are invalid.
 - `path` - the path **MUST** start with slash `/`, such as `/`, `/users`, `/users/<username>`.
 - `handler` - `mixed`, whatever you want.
 - `settings` - user-defined settings.
