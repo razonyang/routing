@@ -2,7 +2,7 @@
 namespace DevLibs\Routing;
 
 /**
- * Interface RouteInterface defined
+ * Interface RouteInterface
  */
 interface RouteInterface
 {

@@ -15,7 +15,7 @@ A fast, flexible and scalable HTTP router for PHP.
 
 ## Requirements
 
-- PHP - `7.0`, `7.1` and `master` are tested, theoretically, it supports `5.4` or newer.
+- PHP - `7.0`, `7.1` and `master` are tested. Theoretically, it supports `5.4` or newer.
 
 ## Install
 
@@ -45,20 +45,21 @@ $router = new Router($settings);
 Router::handle($method, $path, $handler, $settings = null);
 ```
 
-- `method` - `string` or `array`, **case-sensitive**, such as `GET`, `GET|POST`, `['GET', 'POST']`, but "GET, POST" and "GET| POST" are invalid.
+- `method` - `string` or `array`, **case-sensitive**, such as `GET`, `GET|POST`(split by `|`, without space), `['GET', 'POST']`
 - `path` - the path **MUST** start with slash `/`, such as `/`, `/users`, `/users/<username>`.
 - `handler` - `mixed`, whatever you want.
 - `settings` - user-defined settings.
 
+
 Examples
 
-| Method            | Path                         | Handler | Matched                            | Unmatched                              |
-|:------------------|:-----------------------------|:--------|:-----------------------------------|----------------------------------------|
-| GET               | /                            | handler | `GET /`                            | `POST /` `get /`                       |
-| GET&#124;POST     | /users                       | handler | `GET /users` `POST /users`         |                                        |
-| ['GET', 'POST']   | /merchants                   | handler | `GET /merchants` `POST /merchants` |                                        |
-| GET               | /users/<username>            | handler | `GET /users/foo` `GET /users/bar`  |                                        |
-| GET               | /orders/<order_id:\d+>       | handler | `GET /orders/123456`               | `GET /orders/letters`                  |
+| Method            | Path                           | Handler | Matched                            | Unmatched                              |
+|:------------------|:-------------------------------|:--------|:-----------------------------------|----------------------------------------|
+| `GET`             | `/`                            | handler | `GET /`                            | `POST /` `get /`                       |
+| `GET&#124;POST`   | `/users`                       | handler | `GET /users` `POST /users`         |                                        |
+| `['GET', 'POST']` | `/merchants`                   | handler | `GET /merchants` `POST /merchants` |                                        |
+| `GET`             | `/users/<username>`            | handler | `GET /users/foo` `GET /users/bar`  |                                        |
+| `GET`             | `/orders/<order_id:\d+>`       | handler | `GET /orders/123456`               | `GET /orders/letters`                  |
 
 It also provides a few shortcuts for registering handler:
 
@@ -121,7 +122,7 @@ Router::$routeClassName = 'namespace\MyRoute';
 
 As the examples shown above, Router has ability to detect the param's value of the path.
 
-In general, an placeholder pattern MUST be one of "<name>" and "<name:regex>", it will be 
+In general, an placeholder pattern MUST be one of `<name>` and `<name:regex>`, it will be 
 converted to `([^/]+)` and `(regex)` respectively.
 You can also change it via replace the `Router::$replacePatterns` and `Router::$replacements`.
 
@@ -145,7 +146,7 @@ scope of this document.
 ### Grouping
 
 Grouping is an powerful feature of Router for separating modules or API's versions.
-So this library also implements this feature, it allows nested grouping.
+And this library also implements this feature, it allows nested grouping.
 
 ```php
 Router::group($prefix, array $settings = []);
@@ -194,6 +195,7 @@ As the examples shown above, it is obviously easy to design a RESTful API applic
 $router->get('/products', 'products');
 $router->post('/products', 'create product');
 $router->get('/products/<product_id:\d+>', 'product detail');
+$router->put('/products/<product_id:\d+>', 'update product');
 $router->delete('/products/<product_id:\d+>', 'delete product');
 ```
 
