@@ -1,4 +1,10 @@
-# PHP Router [![Build Status](https://travis-ci.org/devlibs/routing.svg?branch=master)](https://travis-ci.org/devlibs/routing) [![Coverage Status](https://coveralls.io/repos/github/devlibs/routing/badge.svg?branch=master)](https://coveralls.io/github/devlibs/routing?branch=master)
+# PHP Router
+
+[![Build Status](https://travis-ci.org/devlibs/routing.svg?branch=master)](https://travis-ci.org/devlibs/routing) 
+[![Coverage Status](https://coveralls.io/repos/github/devlibs/routing/badge.svg?branch=master)](https://coveralls.io/github/devlibs/routing?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/devlibs/routing/v/stable.svg)](https://packagist.org/packages/devlibs/routing)
+[![Total Downloads](https://poser.pugx.org/devlibs/routing/downloads.svg)](https://packagist.org/packages/devlibs/routing)
+[![License](https://poser.pugx.org/devlibs/routing/license.svg)](LICENSE)
 
 A fast, flexible and scalable HTTP router for PHP.
 
@@ -15,12 +21,12 @@ A fast, flexible and scalable HTTP router for PHP.
 
 ## Requirements
 
-- PHP - `7.0`, `7.1` and `master` are tested.
+- PHP - `7.0`, `7.1`, `7.2` and `master` are tested.
 
 ## Install
 
 ```
-composer require devlibs/routing:dev-master
+composer require devlibs/routing:1.0.0
 ```
 
 ## Documentation
