@@ -15,7 +15,7 @@ A fast, flexible and scalable HTTP router for PHP.
 
 ## Requirements
 
-- PHP - `7.0`, `7.1` and `master` are tested. Theoretically, it supports `5.4` or newer.
+- PHP - `7.0`, `7.1` and `master` are tested. Theoretically, it supports `5.5` or newer.
 
 ## Install
 
@@ -127,16 +127,16 @@ converted to `([^/]+)` and `(regex)` respectively.
 You can also change it via replace the `Router::$replacePatterns` and `Router::$replacements`.
 
 | Pattern                                     | Path                                       | Matched | Params |
-|:--------------------------------------------|:-------------------------------------------|:--------|:--------------------------------------------------------|
-| `/guests/<name>`                            | `/guests/小明`                              | YES     | `['name' => '小明']`                                     |
-| `/guests/<name:\w+>`                        | `/guests/foo`                              | YES     | `['name' => 'foo']`                                     |
-| `/guests/<name:\w+>`                        | `/guests/小明`                              | NO      |                                                         |
-| `/orders/<order_id:\d+>`                    | `/orders/123`                              | YES     | `['order_id' => '123']`                                 |
-| `/orders/<order_id:\d+>`                    | `/orders/letters`                          | NO      |                                                         |
-| `/posts/<year:\d{4}>/<month:\d{2}>/<title>` | `/posts/2017/10/hello-world`               | YES     | `['year' => '2017', 'month' => '10', name' => 'foo']`   |
-| `/posts/<year:\d{4}>/<month:\d{2}>/<title>` | `/posts/201/10/hello-world`                | NO      |                                                         |
-| `/posts/<year:\d{4}>/<month:\d{2}>/<title>` | `/posts/2017/9/hello-world`                | NO      |                                                         |
-| `/posts/<year:\d{4}><month:\d{2}>/<title>`  | `/posts/201710/hello-world`                | YES     | `['year' => '2017', 'month' => '10', name' => 'foo']`   |
+|:--------------------------------------------|:-------------------------------------------|:--------|:-----------------------------------------------------------------|
+| `/guests/<name>`                            | `/guests/小明`                              | YES     | `['name' => '小明']`                                              |
+| `/guests/<name:\w+>`                        | `/guests/foo`                              | YES     | `['name' => 'foo']`                                              |
+| `/guests/<name:\w+>`                        | `/guests/小明`                              | NO      |                                                                  |
+| `/orders/<order_id:\d+>`                    | `/orders/123`                              | YES     | `['order_id' => '123']`                                          |
+| `/orders/<order_id:\d+>`                    | `/orders/letters`                          | NO      |                                                                  |
+| `/posts/<year:\d{4}>/<month:\d{2}>/<title>` | `/posts/2017/10/hello-world`               | YES     | `['year' => '2017', 'month' => '10', title' => 'hello-world']`   |
+| `/posts/<year:\d{4}>/<month:\d{2}>/<title>` | `/posts/201/10/hello-world`                | NO      |                                                                  |
+| `/posts/<year:\d{4}>/<month:\d{2}>/<title>` | `/posts/2017/9/hello-world`                | NO      |                                                                  |
+| `/posts/<year:\d{4}><month:\d{2}>/<title>`  | `/posts/201710/hello-world`                | YES     | `['year' => '2017', 'month' => '10', title' => 'hello-world']`   |
 
 ### Settings
 
