@@ -62,7 +62,7 @@ Examples
 | Method            | Path                           | Handler | Matched                            | Unmatched                              |
 |:------------------|:-------------------------------|:--------|:-----------------------------------|----------------------------------------|
 | `GET`             | `/`                            | handler | `GET /`                            | `POST /` `get /`                       |
-| `GET&#124;POST`   | `/users`                       | handler | `GET /users` `POST /users`         |                                        |
+| GET&#124;POST     | `/users`                       | handler | `GET /users` `POST /users`         |                                        |
 | `['GET', 'POST']` | `/merchants`                   | handler | `GET /merchants` `POST /merchants` |                                        |
 | `GET`             | `/users/<username>`            | handler | `GET /users/foo` `GET /users/bar`  |                                        |
 | `GET`             | `/orders/<order_id:\d+>`       | handler | `GET /orders/123456`               | `GET /orders/letters`                  |
