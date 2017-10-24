@@ -15,7 +15,7 @@ A fast, flexible and scalable HTTP router for PHP.
 
 ## Requirements
 
-- PHP - `7.0`, `7.1` and `master` are tested. Theoretically, it supports `5.5` or newer.
+- PHP - `7.0`, `7.1` and `master` are tested.
 
 ## Install
 
